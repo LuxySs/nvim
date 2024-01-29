@@ -1,23 +1,22 @@
 local options = {
-  ensure_installed = {
-    -- lua stuff
-    "stylua",
+	ensure_installed = {
+		-- lua stuff
+		"stylua",
 
-    -- c/cpp
-    "clang-format",
-    "codelldb",
+		-- c/cpp
+		"clang-format",
+		"codelldb",
 
-    -- python
-    "ruff",
-    "debugpy",
+		-- python
+		"ruff",
+		"debugpy",
 
-    -- markdown
-    "prettierd",
+		-- markdown
+		"prettierd",
 
-    -- latex
-    "latexindent",
-  },
-
+		-- latex
+		"latexindent",
+	},
 }
 
 return options

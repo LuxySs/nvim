@@ -7,23 +7,24 @@ local plugins = {
 		"numToStr/Comment.nvim",
 		ft = programming_ft,
 		opts = require("custom.plugins.configs.comment"),
-		lazy = false,
 	},
 
 	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
-		opts = {}, -- don't remove it's important
+		opts = {}, -- don't remove this otherwise it won't work
 	},
 
 	{ -- indentation guide
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
+		-- opts = require("custom.plugins.configs.indent-blankline"),
 	},
 
 	{ -- terminal
-		"NvChad/nvterm",
-		ft = programming_ft,
+		"akinsho/toggleterm.nvim",
+		cmd = { "ToggleTerm" },
+		opts = {}, -- don't remove this otherwise it won't work
 	},
 
 	{ -- Menu / Greeter
@@ -88,6 +89,10 @@ local plugins = {
 			},
 		},
 	},
+
+	-- { -- Detect tabstop and shiftwidth automatically
+	--	"tpope/vim-sleuth",
+	-- },
 
 	-- Other plugins
 	{
