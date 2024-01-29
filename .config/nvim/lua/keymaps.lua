@@ -35,24 +35,24 @@ vim.keymap.set("n", "<leader>ot", ":Outline <CR>", { desc = "Open Terminal botto
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
-	callback = function()
-		vim.highlight.on_yank()
-	end,
-	group = highlight_group,
-	pattern = "*",
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = "*",
 })
 
 -- function that compiles latex and markdown documents
 function customFileTypeAction()
-	-- Get the current filetype
-	local filetype = vim.bo.filetype
-	if filetype == "tex" then
-		vim.cmd("VimtexCompile")
-	elseif filetype == "md" then
-		vim.cmd("MarkdownPreviewToggle")
-	else
-		vim.cmd("echo 'File not compilable'")
-	end
+  -- Get the current filetype
+  local filetype = vim.bo.filetype
+  if filetype == "tex" then
+    vim.cmd("VimtexCompile")
+  elseif filetype == "markdown" then
+    vim.cmd("MarkdownPreviewToggle")
+  else
+    vim.cmd("echo 'File not compilable'")
+  end
 end
 
 vim.api.nvim_set_keymap("n", "<leader>ll", ":lua customFileTypeAction()<CR>", { noremap = true })

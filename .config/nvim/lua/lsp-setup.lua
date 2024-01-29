@@ -78,6 +78,7 @@ local servers = {
 	-- gopls = {},
 	-- tsserver = {},
 	-- html = { filetypes = { 'html', 'twig', 'hbs'} },
+	marksman = {},
 	pyright = {},
 	clangd = {},
 	rust_analyzer = {},
