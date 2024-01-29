@@ -91,7 +91,7 @@ local plugins = {
 	},
 
 	-- { -- Detect tabstop and shiftwidth automatically
-	--	"tpope/vim-sleuth",
+	-- 	"tpope/vim-sleuth",
 	-- },
 
 	-- Other plugins
@@ -128,6 +128,11 @@ local plugins = {
 		config = function()
 			require("colorizer").setup()
 		end,
+	},
+
+	{
+		"xiyaowong/transparent.nvim",
+		cmd = { "TransparentToggle" },
 	},
 }
 

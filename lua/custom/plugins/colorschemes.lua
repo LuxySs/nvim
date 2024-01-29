@@ -1,11 +1,22 @@
 local colorschemes = {
 	{
-		-- Theme inspired by Atom
+		"Mofiqul/dracula.nvim",
+	},
+
+	{
 		"navarasu/onedark.nvim",
-		priority = 1000,
-		config = function()
-			vim.cmd.colorscheme("onedark")
-		end,
+	},
+
+	{
+		"romgrk/doom-one.vim",
+	},
+
+	{
+		"catppuccin/nvim",
+	},
+
+	{
+		"folke/tokyonight.nvim",
 	},
 }
 
