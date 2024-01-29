@@ -1,114 +1,129 @@
-local programming_ft = { 'python', 'c', 'cpp', 'rust' }
+local programming_ft = { "python", "c", "cpp", "rust", "lua" }
 
 local plugins = {
-  require 'custom.plugins.colorschemes',
+	require("custom.plugins.colorschemes"),
 
-  {
-    'numToStr/Comment.nvim',
-    ft = programming_ft,
-  },
+	{
+		"numToStr/Comment.nvim",
+		ft = programming_ft,
+		opts = require("custom.plugins.configs.comment"),
+		lazy = false,
+	},
 
-  {
-    'windwp/nvim-autopairs',
-    event = 'InsertEnter',
-    opts = {}, -- this is equalent to setup({}) function
-  },
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		opts = {}, -- don't remove it's important
+	},
 
-  { -- indentation guide
-    'lukas-reineke/indent-blankline.nvim',
-    main = 'ibl',
-  },
+	{ -- indentation guide
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+	},
 
-  { -- terminal
-    'NvChad/nvterm',
-    ft = programming_ft,
-  },
+	{ -- terminal
+		"NvChad/nvterm",
+		ft = programming_ft,
+	},
 
-  { -- Menu / Greeter
-    'goolord/alpha-nvim',
-    lazy = false,
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    config = function()
-      require 'custom.plugins.configs.alpha'
-    end,
-  },
+	{ -- Menu / Greeter
+		"goolord/alpha-nvim",
+		lazy = false,
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			require("custom.plugins.configs.alpha")
+		end,
+	},
 
-  { -- File browser
-    'stevearc/oil.nvim',
-    event = 'VeryLazy',
-    lazy = false,
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    config = function()
-      require 'custom.plugins.configs.oil'
-    end,
-  },
+	{ -- File browser
+		"stevearc/oil.nvim",
+		event = "VeryLazy",
+		lazy = false,
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			require("custom.plugins.configs.oil")
+		end,
+	},
 
-  { -- notes taking / scientific report
-    {
-      'iamcco/markdown-preview.nvim',
-      ft = { 'markdown' },
-      build = function()
-        vim.fn['mkdp#util#install']()
-      end,
-    },
+	{ -- file managing , picker etc
+		"nvim-tree/nvim-tree.lua",
+		version = "*",
+		lazy = false,
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+		config = function()
+			local opts = require("custom.plugins.configs.nvim-tree")
+			require("nvim-tree").setup(opts)
+		end,
+	},
 
-    {
-      'nvim-neorg/neorg',
-      ft = { 'norg' },
-      run = ':Neorg sync-parsers', -- This is the important bit!
-      config = function()
-        require 'custom.plugins.configs.neorg'
-      end,
-    },
+	{ -- notes taking / scientific report
+		{
+			"iamcco/markdown-preview.nvim",
+			ft = { "markdown" },
+			build = function()
+				vim.fn["mkdp#util#install"]()
+			end,
+		},
 
-    { -- latex
-      {
-        'lervag/vimtex',
-        ft = { 'tex' },
-        init = function() end,
-      },
-      {
-        'evesdropper/luasnip-latex-snippets.nvim',
-        ft = { 'tex' },
-      },
-    },
-  },
+		{
+			"nvim-neorg/neorg",
+			ft = { "norg" },
+			run = ":Neorg sync-parsers", -- This is the important bit!
+			config = function()
+				require("custom.plugins.configs.neorg")
+			end,
+		},
 
-  -- Other plugins
-  {
-    'max397574/better-escape.nvim', -- escape insert mod with jj without having delay
-    event = 'InsertEnter',
-    config = function()
-      require('better_escape').setup()
-    end,
-  },
+		{ -- latex
+			{
+				"lervag/vimtex",
+				ft = { "tex" },
+				init = function() end,
+			},
+			{
+				"evesdropper/luasnip-latex-snippets.nvim",
+				ft = { "tex" },
+			},
+		},
+	},
 
-  {
-    'hedyhli/outline.nvim',
-    ft = programming_ft,
-    cmd = { 'Outline', 'OutlineOpen' },
-    opts = {}, -- don't remove this otherwise it doesn't work
-  },
+	-- Other plugins
+	{
+		"max397574/better-escape.nvim", -- escape insert mod with jj without having delay
+		event = "InsertEnter",
+		config = function()
+			require("better_escape").setup()
+		end,
+	},
 
-  { -- Better looking interface to type commands
-    'folke/noice.nvim',
-    -- this line might look stupid but error occurs if you remove it
-    enabled = true,
-    dependencies = {
-      'MunifTanjim/nui.nvim',
-    },
-    config = function()
-      require('noice').setup()
-    end,
-  },
+	{
+		"hedyhli/outline.nvim",
+		ft = programming_ft,
+		cmd = { "Outline", "OutlineOpen" },
+		opts = {}, -- don't remove this otherwise it doesn't work
+	},
 
-  {
-    'NvChad/nvim-colorizer.lua',
-    cmd = { 'ColorizerToggle' },
-    config = function(_, opts)
-      require('colorizer').setup(opts)
-    end,
-  },
+	{ -- Better looking interface to type commands
+		"folke/noice.nvim",
+		-- this line might look stupid but error occurs if you remove it
+		enabled = true,
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+		},
+		config = function()
+			require("noice").setup()
+		end,
+	},
+
+	{
+		"NvChad/nvim-colorizer.lua",
+		cmd = { "ColorizerToggle" },
+		config = function()
+			require("colorizer").setup()
+		end,
+	},
 }
 
 return plugins
