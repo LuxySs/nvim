@@ -28,6 +28,14 @@ vim.keymap.set("n", "<C-f>", ":NvimTreeToggle<CR>", { desc = "Open NvimTree (fil
 vim.keymap.set("n", "<A-t>", ":ToggleTerm direction=horizontal <CR>", { desc = "Open Terminal bottom" })
 vim.keymap.set("n", "<A-f>", ":ToggleTerm direction=float <CR>", { desc = "Open Terminal floating" })
 
+-- Debugger DAP
+vim.keymap.set("n", "<leader>db", ":DapToggleBreakpoint <CR>")
+vim.keymap.set("n", "<leader>dc", ":DapContinue <CR>")
+vim.keymap.set("n", "<leader>i", ":DapStepInto <CR>")
+vim.keymap.set("n", "<leader>o", ":DapStepOver <CR>")
+vim.keymap.set("n", "<leader>ou", ":DapStepOut <CR>")
+vim.keymap.set("n", "<leader>q", ":DapTerminate <CR>")
+
 -- Outline
 vim.keymap.set("n", "<leader>ot", ":Outline <CR>", { desc = "Open Terminal bottom" })
 
@@ -35,24 +43,24 @@ vim.keymap.set("n", "<leader>ot", ":Outline <CR>", { desc = "Open Terminal botto
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-  group = highlight_group,
-  pattern = "*",
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+	group = highlight_group,
+	pattern = "*",
 })
 
 -- function that compiles latex and markdown documents
 function customFileTypeAction()
-  -- Get the current filetype
-  local filetype = vim.bo.filetype
-  if filetype == "tex" then
-    vim.cmd("VimtexCompile")
-  elseif filetype == "markdown" then
-    vim.cmd("MarkdownPreviewToggle")
-  else
-    vim.cmd("echo 'File not compilable'")
-  end
+	-- Get the current filetype
+	local filetype = vim.bo.filetype
+	if filetype == "tex" then
+		vim.cmd("VimtexCompile")
+	elseif filetype == "markdown" then
+		vim.cmd("MarkdownPreviewToggle")
+	else
+		vim.cmd("echo 'File not compilable'")
+	end
 end
 
 vim.api.nvim_set_keymap("n", "<leader>ll", ":lua customFileTypeAction()<CR>", { noremap = true })

@@ -134,11 +134,6 @@ local plugins = {
 		end,
 	},
 
-	{
-		"xiyaowong/transparent.nvim",
-		cmd = { "TransparentToggle" },
-	},
-
 	{ -- multi-line editing
 		"mg979/vim-visual-multi",
 		event = "VeryLazy",
