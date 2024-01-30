@@ -1,8 +1,10 @@
 local programming_ft = require("programming_ft")
 
 local plugins = {
-	require("custom.plugins.colorschemes"),
 	require("custom.plugins.snippets"),
+
+	-- colorschemes plugin
+	{ "RRethy/nvim-base16" },
 
 	{
 		"numToStr/Comment.nvim",

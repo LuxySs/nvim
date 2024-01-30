@@ -3,7 +3,7 @@
 -- NOTE: You can change these options as you wish!
 
 -- Set colorscheme
-vim.cmd("colorscheme " .. require("custom.select_colorscheme"))
+vim.cmd("colorscheme base16-" .. require("custom.select_colorscheme"))
 
 -- Set highlight on search
 vim.o.hlsearch = false
