@@ -6,6 +6,11 @@ local plugins = {
 	-- colorschemes plugin
 	{ "RRethy/nvim-base16" },
 
+	{ -- transparency plugin
+		"xiyaowong/transparent.nvim",
+		event = "VeryLazy",
+	},
+
 	{
 		"numToStr/Comment.nvim",
 		ft = programming_ft,
