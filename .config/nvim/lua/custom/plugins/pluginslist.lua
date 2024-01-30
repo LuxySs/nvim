@@ -99,6 +99,26 @@ local plugins = {
 	-- },
 
 	-- Other plugins
+	{ -- Better looking interface to type commands
+		"folke/noice.nvim",
+		-- this line might look stupid but error occurs if you remove it
+		enabled = true,
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+		},
+		config = function()
+			require("noice").setup()
+		end,
+	},
+
+	{
+		"kevinhwang91/nvim-ufo",
+		dependencies = "kevinhwang91/promise-async",
+		config = function()
+			require("custom.plugins.configs.ufo")
+		end,
+	},
+
 	{
 		"max397574/better-escape.nvim", -- escape insert mod with jj without having delay
 		event = "InsertEnter",
@@ -112,18 +132,6 @@ local plugins = {
 		ft = programming_ft,
 		cmd = { "Outline", "OutlineOpen" },
 		opts = {}, -- don't remove this otherwise it doesn't work
-	},
-
-	{ -- Better looking interface to type commands
-		"folke/noice.nvim",
-		-- this line might look stupid but error occurs if you remove it
-		enabled = true,
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-		},
-		config = function()
-			require("noice").setup()
-		end,
 	},
 
 	{
