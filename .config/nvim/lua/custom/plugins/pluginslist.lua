@@ -113,7 +113,8 @@ local plugins = {
 
 	{
 		"kevinhwang91/nvim-ufo",
-		dependencies = "kevinhwang91/promise-async",
+		dependencies = { "kevinhwang91/promise-async" },
+		ft = { "tex", "markdown", unpack(programming_ft) },
 		config = function()
 			require("custom.plugins.configs.ufo")
 		end,
