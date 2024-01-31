@@ -16,7 +16,7 @@ dashboard.section.header.val = {
 }
 dashboard.section.buttons.val = {
 	dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
-	dashboard.button("t", "  Explore", ":NvimTreeToggle<CR>"),
+	dashboard.button("t", "  Explore", ":Neotree <CR>"),
 	dashboard.button("f", "  Find File", ":Telescope find_files<CR>"),
 	dashboard.button("r", "󰈚  Recent Files", ":Telescope oldfiles<CR>"),
 	dashboard.button("c", "  Colorscheme", ":Telescope colorscheme<CR>"),

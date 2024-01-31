@@ -55,17 +55,18 @@ local plugins = {
 	},
 
 	{ -- file managing , picker etc
-		"nvim-tree/nvim-tree.lua",
-		version = "*",
-		lazy = false,
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
 		dependencies = {
+			"nvim-lua/plenary.nvim",
 			"nvim-tree/nvim-web-devicons",
+			"MunifTanjim/nui.nvim",
 		},
 		opts = function()
-			return require("custom.plugins.configs.nvim-tree")
+			return require("custom.plugins.configs.neo-tree")
 		end,
 		config = function(_, opts)
-			require("nvim-tree").setup(opts)
+			require("neo-tree").setup(opts)
 		end,
 	},
 
