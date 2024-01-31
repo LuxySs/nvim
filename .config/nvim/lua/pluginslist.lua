@@ -83,7 +83,8 @@ require("lazy").setup({
 		"lewis6991/gitsigns.nvim",
 		event = "VeryLazy",
 		config = function()
-			require("configs.gitsigns")
+			local opts = require("configs.gitsigns")
+			require("gitsigns").setup(opts)
 		end,
 	},
 
