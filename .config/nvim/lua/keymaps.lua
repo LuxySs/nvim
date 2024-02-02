@@ -20,9 +20,9 @@ vim.keymap.set("n", "<C-j>", ":wincmd j<CR>")
 vim.keymap.set("n", "<C-k>", ":wincmd k<CR>")
 vim.keymap.set("n", "<C-l>", ":wincmd l<CR>")
 
--- File browser & tree (oil)
+-- File browser & tree (oil & Neotree)
 vim.keymap.set("n", "<C-o>", ":Oil<CR>", { desc = "Open Oil (file browser)" })
-vim.keymap.set("n", "<C-f>", ":Neotree <CR>", { desc = "Open file tree (file tree)" })
+vim.keymap.set("n", "<C-f>", ":Neotree toggle<CR>", { desc = "Open file tree (file tree)" })
 
 -- Terminal
 vim.keymap.set("n", "<A-t>", ":ToggleTerm direction=horizontal <CR>", { desc = "Open Terminal bottom" })
