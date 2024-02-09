@@ -9,7 +9,6 @@ local options = {
 
 		-- python
 		"ruff",
-		"debugpy",
 
 		-- markdown
 		"prettierd",

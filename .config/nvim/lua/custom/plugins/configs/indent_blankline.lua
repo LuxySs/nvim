@@ -1,3 +1,3 @@
-local opts = {}
+local opts = { scope = { enabled = false }, }
 
 return opts
