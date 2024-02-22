@@ -3,7 +3,7 @@ local programming_ft = require("programming_ft")
 local plugins = { -- debugging
 	{
 		"rcarriga/nvim-dap-ui",
-    ft = programming_ft,
+		ft = programming_ft,
 		dependencies = "mfussenegger/nvim-dap",
 		config = function()
 			local dap = require("dap")
@@ -22,7 +22,7 @@ local plugins = { -- debugging
 	},
 	{
 		"jay-babu/mason-nvim-dap.nvim",
-    ft = programming_ft,
+		ft = programming_ft,
 		dependencies = {
 			"williamboman/mason.nvim",
 			"mfussenegger/nvim-dap",
@@ -33,7 +33,7 @@ local plugins = { -- debugging
 	},
 	{
 		"mfussenegger/nvim-dap",
-    ft = programming_ft,
+		ft = programming_ft,
 		config = function(_, _) end,
 	},
 }

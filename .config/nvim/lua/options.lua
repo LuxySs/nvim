@@ -2,6 +2,16 @@
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 
+-- leader key
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+-- tabs stuff
+vim.cmd("set expandtab")
+vim.cmd("set tabstop=2")
+vim.cmd("set softtabstop=2")
+vim.cmd("set shiftwidth=2")
+
 -- Set colorscheme
 vim.cmd("colorscheme base16-" .. require("custom.select_colorscheme"))
 
@@ -15,8 +25,6 @@ vim.wo.number = true
 vim.o.mouse = "a"
 
 -- Sync clipboard between OS and Neovim.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
 vim.o.clipboard = "unnamedplus"
 
 -- Enable break indent
@@ -44,5 +52,3 @@ vim.o.completeopt = "menuone,noselect"
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
-
--- vim: ts=2 sts=2 sw=2 et

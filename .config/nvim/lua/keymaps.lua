@@ -1,5 +1,3 @@
--- [[ Basic Keymaps ]]
-
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
@@ -64,5 +62,3 @@ function customFileTypeAction()
 end
 
 vim.api.nvim_set_keymap("n", "<leader>ll", ":lua customFileTypeAction()<CR>", { noremap = true })
-
--- vim: ts=2 sts=2 sw=2 et
