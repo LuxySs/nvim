@@ -1,3 +1,5 @@
+local programming_ft = require("programming_ft")
+
 return {
   "numToStr/Comment.nvim",
   ft = programming_ft,

@@ -1,4 +1,4 @@
--- local programming_ft = require("programming_ft")
+local programming_ft = require("programming_ft")
 
 return { -- debugging
 	{
