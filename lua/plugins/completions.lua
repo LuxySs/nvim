@@ -14,16 +14,17 @@ return {
 		config = function()
 			local cmp = require("cmp")
 			require("luasnip.loaders.from_vscode").lazy_load()
+      local luasnip = require("luasnip")
+      luasnip.config.setup({})
 
 			cmp.setup({
 				snippet = {
 					expand = function(args)
-						require("luasnip").lsp_expand(args.body)
+						luasnip.lsp_expand(args.body)
 					end,
 				},
-				window = {
-					completion = cmp.config.window.bordered(),
-					documentation = cmp.config.window.bordered(),
+				completion = {
+					completeopt = "menu,menuone,noinsert",
 				},
 				mapping = cmp.mapping.preset.insert({
 					["<C-n>"] = cmp.mapping.select_next_item(),
@@ -54,12 +55,11 @@ return {
 						end
 					end, { "i", "s" }),
 				}),
-				sources = cmp.config.sources({
+				sources = {
 					{ name = "nvim_lsp" },
-					{ name = "luasnip" }, -- For luasnip users.
-				}, {
-					{ name = "buffer" },
-				}),
+					{ name = "luasnip" },
+					{ name = "path" },
+				},
 			})
 		end,
 	},
