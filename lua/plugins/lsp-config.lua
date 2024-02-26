@@ -16,7 +16,7 @@ local lsp_servers = {
 	},
 }
 
-install_with_mason = {
+local install_with_mason = {
 	-- lua stuff
 	"stylua",
 
@@ -132,7 +132,6 @@ return {
 					})
 				end,
 			})
-
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
