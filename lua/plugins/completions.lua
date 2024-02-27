@@ -14,8 +14,8 @@ return {
 		config = function()
 			local cmp = require("cmp")
 			require("luasnip.loaders.from_vscode").lazy_load()
-      local luasnip = require("luasnip")
-      luasnip.config.setup({})
+			local luasnip = require("luasnip")
+			luasnip.config.setup({})
 
 			cmp.setup({
 				snippet = {
@@ -25,6 +25,10 @@ return {
 				},
 				completion = {
 					completeopt = "menu,menuone,noinsert",
+				},
+				window = {
+					completion = cmp.config.window.bordered(),
+					-- documentation = cmp.config.window.bordered(),
 				},
 				mapping = cmp.mapping.preset.insert({
 					["<C-n>"] = cmp.mapping.select_next_item(),
