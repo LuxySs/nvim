@@ -1,9 +1,20 @@
 return {
 	-- colorschemes plugin
-	"RRethy/nvim-base16",
-	lazy = false,
+	{
+		"RRethy/nvim-base16",
+		lazy = false,
+	},
 
-	-- transparency plugin
-	"xiyaowong/transparent.nvim",
-	enabled = false,
+	{ "catppuccin/nvim", name = "catppuccin" },
+
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		opts = {},
+	},
+
+	{ -- transparency plugin
+		"xiyaowong/transparent.nvim",
+		enabled = false,
+	},
 }
