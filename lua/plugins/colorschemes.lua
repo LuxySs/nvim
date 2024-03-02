@@ -15,6 +15,5 @@ return {
 
 	{ -- transparency plugin
 		"xiyaowong/transparent.nvim",
-		enabled = false,
 	},
 }
