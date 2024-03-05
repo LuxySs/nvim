@@ -1,43 +1,23 @@
-local lsp_servers = {
-	-- gopls = {},
-	-- tsserver = {},
-	-- html = { filetypes = { 'html', 'twig', 'hbs'} },
-	marksman = {},
-	pyright = {},
-	clangd = {},
-	rust_analyzer = {},
-	lua_ls = {
-		Lua = {
-			workspace = { checkThirdParty = false },
-			telemetry = { enable = false },
-			-- NOTE: toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-			-- diagnostics = { disable = { 'missing-fields' } },
-		},
-	},
-}
+local lsp_servers = require("config.lsp_servers")
 
-local install_with_mason = {
-	-- lua stuff
-	"stylua",
+local function get_ensure_installed()
+	local linters = require("config.linters")
+	local formatters = require("config.formatters")
+	local daps = require("config.daps")
 
-	-- c/cpp
-	"clang-format",
-	"codelldb",
 
-	-- python
-	"ruff",
-	"debugpy",
+	local lsp_names = vim.tbl_keys(lsp_servers or {})
+	local linters_names = vim.tbl_flatten(vim.tbl_values(linters))
+	local formatters_names = vim.tbl_flatten(vim.tbl_values(formatters))
+	local daps_names = daps
 
-	-- markdown
-	"prettierd",
+	local res = {}
+	res = vim.list_extend(res, formatters_names)
+	res = vim.list_extend(res, linters_names)
+	res = vim.list_extend(res, formatters_names)
+	res = vim.list_extend(res, daps_names)
 
-	-- latex
-	"latexindent",
-}
-
--- Add lsp server names into install_with_mason to avoid having to write them a second time in install_with_mason
-for server_name, _ in pairs(lsp_servers) do
-	table.insert(install_with_mason, server_name)
+	return res
 end
 
 local on_attach = function(_, bufnr)
@@ -88,7 +68,7 @@ return {
 		"williamboman/mason.nvim",
 		event = "VeryLazy",
 		opts = {
-			ensure_installed = install_with_mason,
+			ensure_installed = get_ensure_installed(lsp_servers, linters, formatters, daps),
 		},
 		config = function(_, opts)
 			require("mason").setup(opts)

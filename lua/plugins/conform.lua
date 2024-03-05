@@ -1,11 +1,3 @@
-local formatters = {
-	lua = { "stylua" },
-	python = { "isort", "ruff_format" },
-	c = { "clang_format" },
-	markdown = { "prettierd" },
-	latex = { "latexindent" },
-}
-
 return {
 	{ -- Autoformat
 		"stevearc/conform.nvim",
@@ -15,7 +7,7 @@ return {
 				timeout_ms = 500,
 				lsp_fallback = true,
 			},
-			formatters_by_ft = formatters,
+			formatters_by_ft = require("config.formatters"),
 		},
 	},
 }
