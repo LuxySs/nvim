@@ -5,14 +5,13 @@ local function get_ensure_installed()
 	local formatters = require("config.formatters")
 	local daps = require("config.daps")
 
-
 	local lsp_names = vim.tbl_keys(lsp_servers or {})
 	local linters_names = vim.tbl_flatten(vim.tbl_values(linters))
 	local formatters_names = vim.tbl_flatten(vim.tbl_values(formatters))
 	local daps_names = daps
 
 	local res = {}
-	res = vim.list_extend(res, formatters_names)
+	res = vim.list_extend(res, lsp_names)
 	res = vim.list_extend(res, linters_names)
 	res = vim.list_extend(res, formatters_names)
 	res = vim.list_extend(res, daps_names)
@@ -68,7 +67,7 @@ return {
 		"williamboman/mason.nvim",
 		event = "VeryLazy",
 		opts = {
-			ensure_installed = get_ensure_installed(lsp_servers, linters, formatters, daps),
+			ensure_installed = get_ensure_installed(),
 		},
 		config = function(_, opts)
 			require("mason").setup(opts)
