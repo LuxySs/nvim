@@ -10,11 +10,12 @@ vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnos
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
--- Navigate between panes
-vim.keymap.set("n", "<C-h>", ":wincmd h<CR>")
-vim.keymap.set("n", "<C-j>", ":wincmd j<CR>")
-vim.keymap.set("n", "<C-k>", ":wincmd k<CR>")
-vim.keymap.set("n", "<C-l>", ":wincmd l<CR>")
+-- Navigate between panes,
+-- uncomment if not using tmux with tmux navigator
+-- vim.keymap.set("n", "<C-h>", ":wincmd h<CR>")
+-- vim.keymap.set("n", "<C-j>", ":wincmd j<CR>")
+-- vim.keymap.set("n", "<C-k>", ":wincmd k<CR>")
+-- vim.keymap.set("n", "<C-l>", ":wincmd l<CR>")
 
 -- File browser & tree (oil & Neotree)
 vim.keymap.set("n", "<C-o>", ":Oil<CR>", { desc = "Open Oil (file browser)" })
