@@ -19,8 +19,11 @@ require("lazy").setup({
 	{ import = "plugins.completion" },
 	{ import = "plugins.git" },
 	{ import = "plugins.lsp" },
+	{ import = "plugins.snippets" },
 	{ import = "plugins.statusline" },
 	{ import = "plugins.treesitter" },
 	{ import = "plugins.ui" },
 	{ import = "plugins.utils" },
 })
+
+require("snippets")
