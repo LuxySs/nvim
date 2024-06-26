@@ -6,7 +6,7 @@
   "cmp_luasnip": { "branch": "master", "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843" },
   "codesnap.nvim": { "branch": "main", "commit": "a223fd882953e56ae1a8747fdc44b8d6a2ff7a9b" },
   "conform.nvim": { "branch": "master", "commit": "9a06e83527407a7600a2fe4e0d10adf432b6215e" },
-  "friendly-snippets": { "branch": "main", "commit": "682157939e57bd6a2c86277dfd4d6fbfce63dbac" },
+  "esqueleto.nvim": { "branch": "main", "commit": "0808d756dfa38b00c4496d8605353286ab15bd8c" },
   "gitsigns.nvim": { "branch": "main", "commit": "93c38d97260330e8501ccda1e6000c858af0d603" },
   "harpoon": { "branch": "harpoon2", "commit": "0378a6c428a0bed6a2781d459d7943843f374bce" },
   "headlines.nvim": { "branch": "master", "commit": "618ef1b2502c565c82254ef7d5b04402194d9ce3" },
