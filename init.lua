@@ -26,4 +26,4 @@ require("lazy").setup({
 	{ import = "plugins.utils" },
 })
 
-require("snippets")
+require("snippets.snippets")
