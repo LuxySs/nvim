@@ -11,6 +11,7 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "ruff-format" },
 				javascript = { "prettierd" },
+				nix = { "nixfmt" },
 			},
 		},
 	},
