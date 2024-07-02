@@ -14,19 +14,6 @@ local map = vim.keymap.set
 map("n", "-", ":Oil<CR>")
 map("n", "=", ":NvimTreeToggle<CR>")
 
--- Function that compiles latex and markdown documents
-function customFileTypeAction()
-	-- Get the current filetype
-	local filetype = vim.bo.filetype
-	if filetype == "tex" then
-		vim.cmd("VimtexCompile")
-	elseif filetype == "markdown" then
-		vim.cmd("MarkdownPreviewToggle")
-	else
-		vim.cmd("echo 'File not compilable'")
-	end
-end
-
 -- compile latex / markdown
 map("n", "<leader>ll", function()
 	-- Get the current filetype
