@@ -29,15 +29,7 @@ local lsp_by_ft = {
 	lua_ls = {},
 	ruff = {},
 	nixd = {},
-	clangd = {
-		format = {
-			enable = true,
-			defaultConfig = {
-				indent_style = "space",
-				indent_size = "4",
-			},
-		},
-	},
+	clangd = {},
 	rust_analyzer = {},
 	tsserver = {},
 }
