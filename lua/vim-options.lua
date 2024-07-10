@@ -10,6 +10,9 @@ vim.o.hlsearch = false
 -- Make line numbers default
 vim.wo.number = true
 
+-- Make the insert cursor a block
+vim.o.guicursor = ""
+
 -- Enable mouse mode for mfs
 vim.o.mouse = "a"
 
