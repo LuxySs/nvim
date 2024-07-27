@@ -10,6 +10,12 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 local map = vim.keymap.set
 
+-- works weirdly (not basic hjkl resizing)
+map("n", "<M-h>", "<c-w>5<")
+map("n", "<M-l>", "<c-w>5>")
+map("n", "<M-k>", "<c-w>+")
+map("n", "<M-j>", "<c-w>-")
+
 -- File browser & tree (oil & Neotree)
 map("n", "-", ":Oil<CR>")
 map("n", "=", ":NvimTreeToggle<CR>")
