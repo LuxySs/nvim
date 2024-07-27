@@ -32,6 +32,12 @@ local lsp_by_ft = {
 	clangd = {},
 	rust_analyzer = {},
 	tsserver = {},
+	cssls = {
+		cmd = {
+			"vscode-css-language-server",
+			"--stdio",
+		},
+	},
 }
 
 return {
