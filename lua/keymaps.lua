@@ -32,3 +32,7 @@ map("n", "<leader>ll", function()
 		vim.cmd("echo 'File not compilable'")
 	end
 end)
+
+map("n", "<leader>ih", function()
+	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(), { 0 }) -- 0 for only the current buffer
+end)
