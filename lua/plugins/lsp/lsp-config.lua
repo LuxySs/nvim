@@ -27,7 +27,7 @@ capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 local lsp_by_ft = {
 	lua_ls = {},
-	ruff = {},
+	pyright = {},
 	nixd = {},
 	clangd = {},
 	rust_analyzer = {},
