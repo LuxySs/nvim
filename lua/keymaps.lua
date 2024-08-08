@@ -36,3 +36,10 @@ end)
 map("n", "<leader>ih", function()
 	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(), { 0 }) -- 0 for only the current buffer
 end)
+
+-- In your init.lua or a separate Lua configuration file
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
+vim.keymap.set("t", "<C-l>", "<C-\\><C-n><C-l>", { noremap = true, silent = true })
+vim.keymap.set("t", "<C-h>", "<C-\\><C-n><C-h>", { noremap = true, silent = true })
+vim.keymap.set("t", "<C-j>", "<C-\\><C-n><C-j>", { noremap = true, silent = true })
+vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-k>", { noremap = true, silent = true })
