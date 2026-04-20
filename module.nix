@@ -102,6 +102,14 @@ inputs:
       nixfmt
     ];
   };
+
+  config.specs.C = {
+    data = null;
+    extraPackages = with pkgs; [
+      clang-tools
+    ];
+  };
+
   # You can use the before and after fields to run them before or after other specs or spec of lists of specs
   config.specs.lua = {
     after = [ "general" ];
