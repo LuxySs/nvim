@@ -53,15 +53,6 @@ return {
       },
     },
   },
-  {
-    "fidget.nvim",
-    auto_enable = true,
-    event = "DeferredUIEnter",
-    -- keys = "",
-    after = function(plugin)
-      require('fidget').setup({})
-    end,
-  },
 
   { import = "plugins.snacks", },
   { import = "plugins.whichkey", },
@@ -74,4 +65,5 @@ return {
   { import = "plugins.format", },
   { import = "plugins.gitsigns", },
   { import = "plugins.lualine", },
+  { import = "plugins.fidget", },
 }
