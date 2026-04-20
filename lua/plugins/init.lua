@@ -14,10 +14,6 @@ M = {
       -- schedule so it runs after VimEnter
       vim.schedule(function()
         vim.cmd.colorscheme(nixInfo("onedark_dark", "settings", "colorscheme"))
-        vim.schedule(function()
-          -- I like this color. Use vim.schedule again to set it after the colorscheme is finished
-          vim.cmd([[hi LineNr guifg=#bb9af7]])
-        end)
       end)
     end
   },
