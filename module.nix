@@ -161,6 +161,7 @@ inputs:
       conform-nvim
       nvim-treesitter-textobjects
       mini-ai
+      mini-surround
       # treesitter + grammars
       nvim-treesitter.withAllGrammars
       # This is for if you only want some of the grammars
