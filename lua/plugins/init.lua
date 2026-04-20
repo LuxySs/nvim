@@ -1,21 +1,5 @@
 return {
   {
-    -- lazydev makes your lua lsp load only the relevant definitions for a file.
-    -- It also gives us a nice way to correlate globals we create with files.
-    "lazydev.nvim",
-    auto_enable = true,
-    cmd = { "LazyDev" },
-    ft = "lua",
-    after = function(_)
-      require('lazydev').setup({
-        library = {
-          { words = { "nixInfo%.lze" }, path = nixInfo("lze", "plugins", "start", "lze") .. '/lua', },
-          { words = { "nixInfo%.lze" }, path = nixInfo("lzextras", "plugins", "start", "lzextras") .. '/lua' },
-        },
-      })
-    end,
-  },
-  {
     "clangd",
     for_cat = { "C" },
     lsp = {}
@@ -498,5 +482,6 @@ return {
   { import = "plugins.snacks", },
   { import = "plugins.whichkey", },
   { import = "plugins.lsp-config", },
+  { import = "plugins.lazydev", },
 
 }
