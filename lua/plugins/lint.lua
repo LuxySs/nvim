@@ -7,17 +7,21 @@ return {
 	-- keys = "",
 	-- colorscheme = "",
 	after = function(plugin)
-		require("lint").linters_by_ft = {
-			-- NOTE: download some linters
-			-- and configure them here
-			-- markdown = {'vale',},
-			-- javascript = { 'eslint' },
-			-- typescript = { 'eslint' },
+		local lint = require("lint")
+
+		lint.linters.checkstyle.args = { "-f", "sarif", "-c", vim.fn.getcwd() .. "/checkstyle.xml" }
+
+		lint.linters_by_ft = {
+			markdown = { "markdownlint" },
+			python = { "ruff" },
+			java = { "checkstyle" },
 		}
 
 		vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 			callback = function()
-				require("lint").try_lint()
+				if vim.bo.modifiable then
+					require("lint").try_lint()
+				end
 			end,
 		})
 	end,
