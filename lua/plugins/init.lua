@@ -8,8 +8,6 @@ return {
     -- unless otherwise specified by a particular handler
     priority = 1000,
     after = function(plugin)
-      -- I also like this color
-      vim.api.nvim_set_hl(0, "MySnacksIndent", { fg = "#32a88f" })
       require('snacks').setup({
         explorer = { replace_netrw = true, },
         picker = {
@@ -23,13 +21,14 @@ return {
         terminal = {},
         scope = {},
         indent = {
-          scope = {
-            hl = 'MySnacksIndent',
+          enabled = true,
+
+          animate = {
+            enabled = false, -- disable scope animation
           },
-          chunk = {
-            -- enabled = true,
-            hl = 'MySnacksIndent',
-          }
+          scope = {
+            enabled = false, -- disable scope highlight entirely
+          },
         },
         statuscolumn = {
           left = { "mark", "git" }, -- priority of signs on the left (high to low)
