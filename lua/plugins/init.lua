@@ -54,6 +54,7 @@ return {
     },
   },
 
+  { import = "plugins.colorscheme", },
   { import = "plugins.snacks", },
   { import = "plugins.whichkey", },
   { import = "plugins.lsp-config", },
