@@ -13,4 +13,5 @@ return {
   { import = "plugins.lualine", },
   { import = "plugins.fidget", },
   { import = "plugins.pairs", },
+  { import = "plugins.mini", },
 }
