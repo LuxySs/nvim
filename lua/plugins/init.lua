@@ -202,15 +202,6 @@ M = {
     end,
   },
   {
-    "mason.nvim",
-    enabled = not nixInfo.isNix,
-    priority = 100, -- <- run lsp hook before lspconfig's hook
-    on_plugin = { "nvim-lspconfig" },
-    lsp = function(plugin)
-      vim.cmd.MasonInstall(plugin.name)
-    end,
-  },
-  {
     -- lazydev makes your lua lsp load only the relevant definitions for a file.
     -- It also gives us a nice way to correlate globals we create with files.
     "lazydev.nvim",
@@ -252,7 +243,7 @@ M = {
   },
   {
     "nixd",
-    enabled = nixInfo.isNix, -- mason doesn't have nixd
+    enabled = nixInfo.isNix,
     for_cat = "nix",
     lsp = {
       filetypes = { "nix" },
