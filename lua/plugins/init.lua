@@ -1,6 +1,4 @@
-local M
-
-M = {
+return {
   {
     "snacks.nvim",
     auto_enable = true,
@@ -696,5 +694,3 @@ M = {
     end,
   },
 }
-
-return M
