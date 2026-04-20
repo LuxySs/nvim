@@ -162,6 +162,7 @@ inputs:
       nvim-treesitter-textobjects
       mini-ai
       mini-surround
+      vim-tmux-navigator
       # treesitter + grammars
       nvim-treesitter.withAllGrammars
       # This is for if you only want some of the grammars
