@@ -90,15 +90,6 @@ return {
     end,
   },
   {
-    "nvim-surround",
-    auto_enable = true,
-    event = "DeferredUIEnter",
-    -- keys = "",
-    after = function(plugin)
-      require('nvim-surround').setup()
-    end,
-  },
-  {
     "vim-startuptime",
     auto_enable = true,
     cmd = { "StartupTime" },
@@ -245,4 +236,5 @@ return {
   { import = "plugins.treesitter", },
   { import = "plugins.lint", },
   { import = "plugins.completion", },
+  { import = "plugins.surround", },
 }
