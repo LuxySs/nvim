@@ -23,3 +23,11 @@ vim.keymap.set({"n", "v", "x"}, '<leader>Y', '"+yy', { noremap = true, silent = 
 vim.keymap.set({'n', 'v', 'x'}, '<leader>p', '"+p', { noremap = true, silent = true, desc = 'Paste from clipboard' })
 vim.keymap.set('i', '<C-p>', '<C-r><C-p>+', { noremap = true, silent = true, desc = 'Paste from clipboard from within insert mode' })
 vim.keymap.set("x", "<leader>P", '"_dP', { noremap = true, silent = true, desc = 'Paste over selection without erasing unnamed register' })
+
+-- Keymap to toggle diagnostics virtual lines
+vim.keymap.set('n', '<leader>vl', function()
+  local current = vim.diagnostic.config().virtual_lines
+  vim.diagnostic.config({
+    virtual_lines = not current,
+  })
+end, { desc = 'Toggle [V]irtual [L]ines' })
