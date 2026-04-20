@@ -148,6 +148,7 @@ inputs:
       snacks-nvim
       nvim-lspconfig
       nvim-surround
+      blink-pairs
       blink-cmp
       blink-compat
       cmp-cmdline

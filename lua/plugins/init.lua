@@ -12,4 +12,5 @@ return {
   { import = "plugins.gitsigns", },
   { import = "plugins.lualine", },
   { import = "plugins.fidget", },
+  { import = "plugins.pairs", },
 }
