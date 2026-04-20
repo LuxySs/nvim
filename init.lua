@@ -108,3 +108,4 @@ require("keymaps")
 -- You can also include other files from within the specs via an `import` spec.
 -- see https://github.com/BirdeeHub/lze?tab=readme-ov-file#structuring-your-plugins
 nixInfo.lze.load("plugins")
+nixInfo.lze.load("LSPs")

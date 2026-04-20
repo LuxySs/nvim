@@ -1,5 +1,4 @@
 return {
-  { import = "plugins.LSPs", },
   { import = "plugins.colorscheme", },
   { import = "plugins.snacks", },
   { import = "plugins.whichkey", },
