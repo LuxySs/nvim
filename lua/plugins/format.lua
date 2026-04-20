@@ -5,32 +5,50 @@ return {
 	-- event = "",
 	-- ft = "",
 	keys = {
-		{ "<leader>FF", desc = "[F]ormat [F]ile" },
+		{
+			"<leader>f",
+			function()
+				require("conform").format({ async = true, lsp_fallback = true })
+			end,
+			desc = "[f]ormat file",
+		},
 	},
-	-- colorscheme = "",
+
 	after = function(plugin)
 		local conform = require("conform")
 
 		conform.setup({
 			formatters_by_ft = {
-				-- NOTE: download some formatters
-				-- and configure them here
-				lua = nixInfo(nil, "settings", "cats", "lua") and { "stylua" } or nil,
-				-- go = { "gofmt", "golint" },
-				-- templ = { "templ" },
-				-- Conform will run multiple formatters sequentially
-				-- python = { "isort", "black" },
-				-- Use a sub-list to run only the first available formatter
-				-- javascript = { { "prettierd", "prettier" } },
+				lua = { "stylua" },
+				nix = { "nixfmt" },
+				c = { "clang-format" },
+				cpp = { "clang-format" },
+				cmake = { "cmake_format" },
+				python = { "ruff_format" },
+				javascript = { "prettierd" },
+				typescript = { "prettierd" },
+				java = { "spotless_maven" },
+				go = { "gofmt", "golint" },
 			},
-		})
 
-		vim.keymap.set({ "n", "v" }, "<leader>FF", function()
-			conform.format({
-				lsp_fallback = true,
-				async = false,
-				timeout_ms = 1000,
-			})
-		end, { desc = "[F]ormat [F]ile" })
+			format_on_save = function(bufnr)
+				-- Disable autoformat on certain languages that don't
+				-- have a well standardized coding style (c, cpp, ...).
+				local disable_lsp_fallback_filetypes = { c = true, cpp = true, java = true }
+				if disable_lsp_fallback_filetypes[vim.bo[bufnr].filetype] then
+					return
+				end
+
+				-- Disable autoformat with a global or buffer-local variable
+				if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+					return
+				end
+
+				return {
+					timeout_ms = 500,
+					lsp_format = "fallback",
+				}
+			end,
+		})
 	end,
 }
