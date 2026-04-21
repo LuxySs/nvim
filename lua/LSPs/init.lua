@@ -1,5 +1,29 @@
 return {
   {
+    'nixd',
+    enabled = nixInfo.isNix,
+    for_cat = 'nix',
+    lsp = {
+      filetypes = { 'nix' },
+      settings = {
+        nixd = {
+          nixpkgs = {
+            expr = [[import <nixpkgs> {}]],
+          },
+          options = {},
+          formatting = {
+            command = { 'nixfmt' },
+          },
+          diagnostic = {
+            suppress = {
+              'sema-escaping-with',
+            },
+          },
+        },
+      },
+    },
+  },
+  {
     'clangd',
     for_cat = { 'C' },
     lsp = {},
@@ -27,30 +51,6 @@ return {
       },
     },
     -- also these are regular specs and you can use before and after and all the other normal fields
-  },
-  {
-    'nixd',
-    enabled = nixInfo.isNix,
-    for_cat = 'nix',
-    lsp = {
-      filetypes = { 'nix' },
-      settings = {
-        nixd = {
-          nixpkgs = {
-            expr = [[import <nixpkgs> {}]],
-          },
-          options = {},
-          formatting = {
-            command = { 'nixfmt' },
-          },
-          diagnostic = {
-            suppress = {
-              'sema-escaping-with',
-            },
-          },
-        },
-      },
-    },
   },
   {
     'marksman',
