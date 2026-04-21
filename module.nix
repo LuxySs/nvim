@@ -166,6 +166,7 @@ inputs:
       vimtex
     ];
     extraPackages = with pkgs; [
+      texlab
       texliveMedium
       config.settings.pdfViewer
     ];

@@ -34,6 +34,11 @@ return {
     lsp = {},
   },
   {
+    'texlab',
+    for_cat = { 'latex' },
+    lsp = {},
+  },
+  {
     -- name of the lsp
     'lua_ls',
     for_cat = 'lua',
