@@ -29,6 +29,11 @@ return {
     lsp = {},
   },
   {
+    'neocmake',
+    for_cat = { 'C' },
+    lsp = {},
+  },
+  {
     -- name of the lsp
     'lua_ls',
     for_cat = 'lua',
