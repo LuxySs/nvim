@@ -11,6 +11,22 @@ return {
 		dep_of = { "cmp-cmdline" },
 	},
 	{
+		"friendly-snippets",
+		auto_enable = true,
+		on_plugin = { "luasnip" },
+		after = function(_)
+			print("friendly-snippets: after")
+		end,
+	},
+	{
+		"luasnip",
+		auto_enable = true,
+		dep_of = { "blink.cmp" },
+		after = function(_)
+			require("plugins.snippets")
+		end,
+	},
+	{
 		"colorful-menu.nvim",
 		auto_enable = true,
 		on_plugin = { "blink.cmp" },
@@ -25,7 +41,12 @@ return {
 				-- See :h blink-cmp-config-keymap for configuring keymaps
 				keymap = {
 					preset = "default",
+					["<C-l>"] = { "snippet_forward", "fallback" },
+					["<C-h>"] = { "snippet_backward", "fallback" },
 				},
+
+				snippets = { preset = "luasnip" },
+
 				cmdline = {
 					enabled = true,
 					completion = {
@@ -81,7 +102,7 @@ return {
 					},
 				},
 				sources = {
-					default = { "lsp", "path", "buffer", "omni" },
+					default = { "lsp", "path", "snippets", "buffer", "omni" },
 					providers = {
 						path = {
 							score_offset = 50,

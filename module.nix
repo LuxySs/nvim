@@ -161,6 +161,8 @@ inputs:
       blink-cmp
       blink-compat
       cmp-cmdline
+      luasnip
+      friendly-snippets
       colorful-menu-nvim
       lualine-nvim
       gitsigns-nvim
