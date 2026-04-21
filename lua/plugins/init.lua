@@ -20,4 +20,5 @@ return {
   { import = "plugins.markview", },
   { import = "plugins.typst-preview", },
   { import = "plugins.ufo", },
+	{ import = "plugins.highlight-colors" },
 }
