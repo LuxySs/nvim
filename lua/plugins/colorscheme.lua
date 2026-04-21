@@ -9,7 +9,7 @@ return {
 		-- The default load field contains vim.cmd.packadd
 		-- Here we override it to schedule when our colorscheme is loaded
 		load = function(_name)
-			vim.cmd.colorscheme(nixInfo("onedark_dark", "settings", "colorscheme"))
+			vim.cmd.colorscheme(nixInfo("gruvbox", "settings", "colorscheme"))
 		end,
 	},
 	{
