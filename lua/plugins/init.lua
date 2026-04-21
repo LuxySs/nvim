@@ -22,4 +22,5 @@ return {
   { import = "plugins.ufo", },
 	{ import = "plugins.highlight-colors" },
 	{ import = "plugins.todo-comments" },
+	{ import = "plugins.neogit" },
 }
