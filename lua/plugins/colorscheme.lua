@@ -30,4 +30,9 @@ return {
 		auto_enable = true,
 		colorscheme = "gruvbox",
 	},
+	{
+		"vague.nvim",
+		auto_enable = true,
+		colorscheme = "vague",
+	},
 }
