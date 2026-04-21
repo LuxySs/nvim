@@ -54,6 +54,7 @@ inputs:
         "onedark" = onedarkpro-nvim;
         "onelight" = onedarkpro-nvim;
         "moonfly" = vim-moonfly-colors;
+        "gruvbox" = gruvbox-nvim;
       }
     );
   };

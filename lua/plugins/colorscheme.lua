@@ -28,4 +28,9 @@ return {
 		auto_enable = true,
 		colorscheme = "moonfly",
 	},
+	{
+		"gruvbox.nvim",
+		auto_enable = true,
+		colorscheme = "gruvbox",
+	},
 }
