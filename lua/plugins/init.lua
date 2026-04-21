@@ -14,7 +14,7 @@ return {
   { import = "plugins.fidget", },
   { import = "plugins.pairs", },
   { import = "plugins.mini", },
-  { import = "plugins.vim-tmux-navigator", },
+  { import = "plugins.tmux-navigator", },
   { import = "plugins.oil", },
   { import = "plugins.debug", },
   { import = "plugins.markview", },
