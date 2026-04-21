@@ -14,9 +14,6 @@ return {
 		"friendly-snippets",
 		auto_enable = true,
 		on_plugin = { "luasnip" },
-		after = function(_)
-			print("friendly-snippets: after")
-		end,
 	},
 	{
 		"luasnip",
