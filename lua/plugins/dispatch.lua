@@ -1,5 +1,5 @@
 return {
-	"vim-dispatch",
-	auto_enable = true,
-	event = "DeferredUIEnter",
+  'vim-dispatch',
+  auto_enable = true,
+  event = 'DeferredUIEnter',
 }
