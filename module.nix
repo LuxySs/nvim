@@ -113,6 +113,13 @@ inputs:
     ];
   };
 
+  config.specs.markdown = {
+    data = null;
+    extraPackages = with pkgs; [
+      marksman
+    ];
+  };
+
   # You can use the before and after fields to run them before or after other specs or spec of lists of specs
   config.specs.lua = {
     after = [ "general" ];

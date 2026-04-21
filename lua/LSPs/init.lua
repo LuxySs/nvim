@@ -52,4 +52,9 @@ return {
 			},
 		},
 	},
+	{
+		"marksman",
+		for_cat = "markdown",
+		lsp = {},
+	},
 }
