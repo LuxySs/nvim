@@ -68,6 +68,13 @@ inputs:
           builtins.getAttr config.settings.colorscheme colorschemes;
     };
 
+  options.settings.pdfViewer = lib.mkOption {
+    type = lib.types.package;
+    default = pkgs.zathura;
+  };
+
+  config.info.pdfViewer = baseNameOf (lib.getExe config.settings.pdfViewer);
+
   # If the defaults are fine, you can just provide the `.data` field
   # In this case, a list of specs, instead of a single plugin like above
   config.specs.lze = [
@@ -128,6 +135,7 @@ inputs:
     extraPackages = with pkgs; [
       typst
       tinymist
+      config.settings.pdfViewer
     ];
   };
 
@@ -137,7 +145,7 @@ inputs:
     ];
     extraPackages = with pkgs; [
       texliveMedium
-      zathura
+      config.settings.pdfViewer
     ];
   };
 
