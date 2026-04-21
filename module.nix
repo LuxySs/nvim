@@ -224,13 +224,6 @@ inputs:
 
       # treesitter + grammars
       nvim-treesitter.withAllGrammars
-      # This is for if you only want some of the grammars
-      # (nvim-treesitter.withPlugins (
-      #   plugins: with plugins; [
-      #     nix
-      #     lua
-      #   ]
-      # ))
     ];
   };
 
