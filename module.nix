@@ -100,12 +100,22 @@ inputs:
     }
   ];
 
-  # you can name these whatever you want.
   config.specs.nix = {
     data = null;
     extraPackages = with pkgs; [
       nixd
       nixfmt
+    ];
+  };
+
+  config.specs.lua = {
+    lazy = true;
+    data = with pkgs.vimPlugins; [
+      lazydev-nvim
+    ];
+    extraPackages = with pkgs; [
+      lua-language-server
+      stylua
     ];
   };
 
@@ -146,19 +156,6 @@ inputs:
     extraPackages = with pkgs; [
       texliveMedium
       config.settings.pdfViewer
-    ];
-  };
-
-  # You can use the before and after fields to run them before or after other specs or spec of lists of specs
-  config.specs.lua = {
-    after = [ "general" ];
-    lazy = true;
-    data = with pkgs.vimPlugins; [
-      lazydev-nvim
-    ];
-    extraPackages = with pkgs; [
-      lua-language-server
-      stylua
     ];
   };
 
