@@ -132,7 +132,6 @@ inputs:
     after = [ "lze" ];
     # note we didn't have to specify the `lze` specs name, because it was a top level spec
     extraPackages = with pkgs; [
-      lazygit
       tree-sitter
     ];
     # this `lazy = true` definition will transfer to specs in the contained DAL, if there is one.
