@@ -25,4 +25,5 @@ return {
 	{ import = "plugins.neogit" },
 	{ import = "plugins.vimtex" },
 	{ import = "plugins.dispatch" },
+	{ import = "plugins.comment" },
 }

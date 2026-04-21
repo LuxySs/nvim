@@ -213,6 +213,8 @@ inputs:
 
       vim-dispatch
 
+      comment-nvim
+
       # treesitter + grammars
       nvim-treesitter.withAllGrammars
       # This is for if you only want some of the grammars
