@@ -23,4 +23,5 @@ return {
 	{ import = "plugins.highlight-colors" },
 	{ import = "plugins.todo-comments" },
 	{ import = "plugins.neogit" },
+	{ import = "plugins.vimtex" },
 }

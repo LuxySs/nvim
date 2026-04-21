@@ -132,6 +132,16 @@ inputs:
     ];
   };
 
+  config.specs.latex = {
+    data = with pkgs.vimPlugins; [
+      vimtex
+    ];
+    extraPackages = with pkgs; [
+      texliveMedium
+      zathura
+    ];
+  };
+
   # You can use the before and after fields to run them before or after other specs or spec of lists of specs
   config.specs.lua = {
     after = [ "general" ];
