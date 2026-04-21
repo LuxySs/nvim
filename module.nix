@@ -129,6 +129,18 @@ inputs:
     ];
   };
 
+  config.specs.rust = {
+    data = [
+      config.nvim-lib.neovimPlugins.rustaceanvim
+    ];
+    extraPackages = with pkgs; [
+      (config.info.rust.toolchain or inputs.fenix.packages.${stdenv.hostPlatform.system}.latest.toolchain)
+      rustup
+      llvmPackages.bintools
+      gdb
+    ];
+  };
+
   config.specs.markdown = {
     data = with pkgs.vimPlugins; [ markview-nvim ];
     extraPackages = with pkgs; [
