@@ -19,4 +19,5 @@ return {
   { import = "plugins.debug", },
   { import = "plugins.markview", },
   { import = "plugins.typst-preview", },
+  { import = "plugins.ufo", },
 }
