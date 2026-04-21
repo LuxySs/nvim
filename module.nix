@@ -114,9 +114,21 @@ inputs:
   };
 
   config.specs.markdown = {
-    data = null;
+    data = with pkgs.vimPlugins; [ markview-nvim ];
     extraPackages = with pkgs; [
       marksman
+    ];
+  };
+
+  config.specs.typst = {
+    lazy = true;
+    data = with pkgs.vimPlugins; [
+      markview-nvim
+      typst-preview-nvim
+    ];
+    extraPackages = with pkgs; [
+      typst
+      tinymist
     ];
   };
 

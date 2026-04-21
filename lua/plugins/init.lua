@@ -17,4 +17,6 @@ return {
   { import = "plugins.vim-tmux-navigator", },
   { import = "plugins.oil", },
   { import = "plugins.debug", },
+  { import = "plugins.markview", },
+  { import = "plugins.typst-preview", },
 }

@@ -57,4 +57,9 @@ return {
 		for_cat = "markdown",
 		lsp = {},
 	},
+	{
+		"tinymist",
+		for_cat = "typst",
+		lsp = {},
+	},
 }
