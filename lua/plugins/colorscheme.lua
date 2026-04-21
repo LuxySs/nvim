@@ -19,20 +19,24 @@ return {
 		"onedarkpro.nvim",
 		auto_enable = true, -- <- auto enable is useful here
 		colorscheme = { "onedark", "onedark_dark", "onedark_vivid", "onelight" },
+		priority = 1000,
 	},
 	{
 		"vim-moonfly-colors",
 		auto_enable = true,
 		colorscheme = "moonfly",
+		priority = 1000,
 	},
 	{
 		"gruvbox.nvim",
 		auto_enable = true,
 		colorscheme = "gruvbox",
+		priority = 1000,
 	},
 	{
 		"vague.nvim",
 		auto_enable = true,
 		colorscheme = "vague",
+		priority = 1000,
 	},
 }

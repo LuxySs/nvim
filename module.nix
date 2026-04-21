@@ -42,32 +42,31 @@ inputs:
     type = lib.types.str;
     default = "gruvbox";
   };
-  config.specs.colorscheme = {
-    lazy = true;
-    data = builtins.getAttr config.settings.colorscheme (
-      with pkgs.vimPlugins;
-      {
-        "onedark_dark" = onedarkpro-nvim;
-        "onedark_vivid" = onedarkpro-nvim;
-        "onedark" = onedarkpro-nvim;
-        "onelight" = onedarkpro-nvim;
-        "moonfly" = vim-moonfly-colors;
-        "gruvbox" = gruvbox-nvim;
-        "vague" = vague-nvim;
-      }
-    );
+  options.settings.enableAllColorschemes = lib.mkOption {
+    type = lib.types.bool;
+    default = true;
   };
-  # If you don't want the boilerplate of a whole option in settings, you could just pass stuff
-  config.info.testvalue = {
-    some = "stuff";
-    goes = "here";
-  };
-  # and grab it in lua with `require(vim.g.nix_info_plugin_name)(nil, "info", "testvalue", "some") == "stuff"`
-  # Tip: in your nvim command line run:
-  # `:lua require('lzextras').debug.display(require(vim.g.nix_info_plugin_name))`
-  config.settings.anothertestvalue = {
-    settings = "can also accept freeform values";
-  };
+
+  config.specs.colorscheme =
+    let
+      colorschemes = with pkgs.vimPlugins; {
+        onedark_dark = onedarkpro-nvim;
+        onedark_vivid = onedarkpro-nvim;
+        onedark = onedarkpro-nvim;
+        onelight = onedarkpro-nvim;
+        moonfly = vim-moonfly-colors;
+        gruvbox = gruvbox-nvim;
+        vague = vague-nvim;
+      };
+    in
+    {
+      lazy = true;
+      data =
+        if config.settings.enableAllColorschemes then
+          builtins.attrValues colorschemes
+        else
+          builtins.getAttr config.settings.colorscheme colorschemes;
+    };
 
   # If the defaults are fine, you can just provide the `.data` field
   # In this case, a list of specs, instead of a single plugin like above
