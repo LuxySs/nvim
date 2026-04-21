@@ -21,4 +21,5 @@ return {
   { import = "plugins.typst-preview", },
   { import = "plugins.ufo", },
 	{ import = "plugins.highlight-colors" },
+	{ import = "plugins.todo-comments" },
 }
