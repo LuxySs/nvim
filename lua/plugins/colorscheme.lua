@@ -9,10 +9,7 @@ return {
 		-- The default load field contains vim.cmd.packadd
 		-- Here we override it to schedule when our colorscheme is loaded
 		load = function(_name)
-			-- schedule so it runs after VimEnter
-			vim.schedule(function()
-				vim.cmd.colorscheme(nixInfo("onedark_dark", "settings", "colorscheme"))
-			end)
+			vim.cmd.colorscheme(nixInfo("onedark_dark", "settings", "colorscheme"))
 		end,
 	},
 	{
