@@ -28,7 +28,6 @@ return {
 				javascript = { "prettierd" },
 				typescript = { "prettierd" },
 				java = { "spotless_maven" },
-				go = { "gofmt", "golint" },
 			},
 
 			format_on_save = function(bufnr)

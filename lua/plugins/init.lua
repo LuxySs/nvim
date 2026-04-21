@@ -16,4 +16,5 @@ return {
   { import = "plugins.mini", },
   { import = "plugins.vim-tmux-navigator", },
   { import = "plugins.oil", },
+  { import = "plugins.debug", },
 }

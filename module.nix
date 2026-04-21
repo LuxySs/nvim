@@ -107,6 +107,9 @@ inputs:
     data = null;
     extraPackages = with pkgs; [
       clang-tools
+      neocmakelsp
+      cmake-format
+      gdb
     ];
   };
 
@@ -164,6 +167,11 @@ inputs:
       mini-surround
       vim-tmux-navigator
       oil-nvim
+
+      nvim-dap
+      nvim-dap-ui
+      nvim-dap-virtual-text
+
       # treesitter + grammars
       nvim-treesitter.withAllGrammars
       # This is for if you only want some of the grammars
