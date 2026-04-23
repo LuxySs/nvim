@@ -6,7 +6,4 @@ return {
   -- ft = "",
   -- keys = "",
   -- colorscheme = "",
-  after = function(plugin)
-    require('which-key').setup({})
-  end,
 }
