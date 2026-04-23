@@ -39,6 +39,11 @@ return {
     lsp = {},
   },
   {
+    'bashls',
+    for_cat = { 'bash' },
+    lsp = {},
+  },
+  {
     -- name of the lsp
     'lua_ls',
     for_cat = 'lua',

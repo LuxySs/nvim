@@ -129,6 +129,13 @@ inputs:
     ];
   };
 
+  config.specs.bash = {
+    data = null;
+    extraPackages = with pkgs; [
+      bash-language-server
+    ];
+  };
+
   config.specs.rust = {
     data = [
       config.nvim-lib.neovimPlugins.rustaceanvim
