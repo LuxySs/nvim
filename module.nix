@@ -136,6 +136,14 @@ inputs:
     ];
   };
 
+  config.specs.python = {
+    data = null;
+    extraPackages = with pkgs; [
+      pyright
+      ruff
+    ];
+  };
+
   config.specs.rust = {
     data = [
       config.nvim-lib.neovimPlugins.rustaceanvim

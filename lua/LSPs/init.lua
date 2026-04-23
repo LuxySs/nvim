@@ -73,4 +73,9 @@ return {
     for_cat = 'java',
     lsp = {},
   },
+  {
+    'pyright',
+    for_cat = 'python',
+    lsp = {},
+  },
 }
