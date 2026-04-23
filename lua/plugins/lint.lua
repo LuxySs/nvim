@@ -12,7 +12,6 @@ return {
     lint.linters.checkstyle.args = { '-f', 'sarif', '-c', vim.fn.getcwd() .. '/checkstyle.xml' }
 
     lint.linters_by_ft = {
-      markdown = { 'markdownlint' },
       python = { 'ruff' },
       java = { 'checkstyle' },
     }
