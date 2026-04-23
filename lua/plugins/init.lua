@@ -26,4 +26,5 @@ return {
   { import = 'plugins.vimtex' },
   { import = 'plugins.dispatch' },
   { import = 'plugins.comment' },
+  { import = 'plugins.sleuth' },
 }
