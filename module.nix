@@ -213,11 +213,6 @@ inputs:
     # here we chose a DAL of plugins, but we can also pass a single plugin, or null
     # plugins are of type wlib.types.stringable
     data = with pkgs.vimPlugins; [
-      {
-        data = vim-sleuth;
-        # You can override defaults from the parent spec here
-        lazy = false;
-      }
       snacks-nvim
       nvim-lspconfig
       nvim-surround
