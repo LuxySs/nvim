@@ -1,5 +1,6 @@
 {
-  description = "Flake exporting a configured neovim package";
+  description = "Neovim configuration";
+
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     wrappers.url = "github:BirdeeHub/nix-wrapper-modules";
