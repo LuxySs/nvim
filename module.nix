@@ -141,6 +141,16 @@ inputs:
     ];
   };
 
+  config.specs.java = {
+    lazy = true;
+    data = with pkgs.vimPlugins; [
+      nvim-jdtls
+    ];
+    extraPackages = with pkgs; [
+      jdt-language-server
+    ];
+  };
+
   config.specs.markdown = {
     data = with pkgs.vimPlugins; [ markview-nvim ];
     extraPackages = with pkgs; [

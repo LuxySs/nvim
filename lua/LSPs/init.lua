@@ -72,4 +72,11 @@ return {
     for_cat = 'typst',
     lsp = {},
   },
+  {
+    'jdtls',
+    for_cat = 'java',
+    lsp = {
+      filetypes = { 'java' },
+    },
+  },
 }
