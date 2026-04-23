@@ -33,7 +33,12 @@ return {
       format_on_save = function(bufnr)
         -- Disable autoformat on certain languages that don't
         -- have a well standardized coding style (c, cpp, ...).
-        local disable_lsp_fallback_filetypes = { c = true, cpp = true, java = true }
+        local disable_lsp_fallback_filetypes = {
+          c = true,
+          cpp = true,
+          java = true,
+          cmake = true,
+        }
         if disable_lsp_fallback_filetypes[vim.bo[bufnr].filetype] then
           return
         end
