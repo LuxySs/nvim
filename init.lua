@@ -94,20 +94,12 @@ nixInfo.lze.h.lsp.set_ft_fallback(function(name)
 end)
 
 -- NOTE: These 2 should be set up before any plugins with keybinds are loaded.
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = ' ' -- Set leader key to space
+vim.g.maplocalleader = ' ' -- Set local leader key (NEW)
 
 require('options')
 require('autocommands')
-
-vim.g.netrw_liststyle = 0
-vim.g.netrw_banner = 0
-
 require('keymaps')
 
--- NOTE: You will likely want to break this up into more files.
--- You can call this more than once.
--- You can also include other files from within the specs via an `import` spec.
--- see https://github.com/BirdeeHub/lze?tab=readme-ov-file#structuring-your-plugins
 nixInfo.lze.load('plugins')
 nixInfo.lze.load('LSPs')
