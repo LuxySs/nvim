@@ -213,6 +213,7 @@ inputs:
     # here we chose a DAL of plugins, but we can also pass a single plugin, or null
     # plugins are of type wlib.types.stringable
     data = with pkgs.vimPlugins; [
+      vim-sleuth
       snacks-nvim
       nvim-lspconfig
       nvim-surround
