@@ -1,38 +1,35 @@
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Moves Line Down' })
-vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Moves Line Up' })
-vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll Down' })
-vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll Up' })
-vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Next Search Result' })
-vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Previous Search Result' })
+local map = vim.keymap.set
 
-vim.keymap.set('n', '<leader><leader>[', '<cmd>bprev<CR>', { desc = 'Previous buffer' })
-vim.keymap.set('n', '<leader><leader>]', '<cmd>bnext<CR>', { desc = 'Next buffer' })
-vim.keymap.set('n', '<leader><leader>l', '<cmd>b#<CR>', { desc = 'Last buffer' })
-vim.keymap.set('n', '<leader><leader>d', '<cmd>bdelete<CR>', { desc = 'delete buffer' })
+map('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlights' })
 
 -- Remap for dealing with word wrap
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
+-- Window resizing
+map('n', '<A-k>', ':resize +5<CR>', { desc = 'Increase window height' })
+map('n', '<A-j>', ':resize -5<CR>', { desc = 'Decrease window height' })
+map('n', '<A-h>', ':vertical resize -5<CR>', { desc = 'Decrease window width' })
+map('n', '<A-l>', ':vertical resize +5<CR>', { desc = 'Increase window width' })
+
+-- Move lines up/down
+map('n', '<A-J>', ':m .+1<CR>==', { desc = 'Move line down' })
+map('n', '<A-K>', ':m .-2<CR>==', { desc = 'Move line up' })
+map('v', '<A-J>', ":m '>+1<CR>gv=gv", { desc = 'Move selection down' })
+map('v', '<A-K>', ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
+
+-- Better indenting in visual mode
+map('v', '<', '<gv', { desc = 'Indent left and reselect' })
+map('v', '>', '>gv', { desc = 'Indent right and reselect' })
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
--- You should instead use these keybindings so that they are still easy to use, but dont conflict
-vim.keymap.set({ 'v', 'x', 'n' }, '<leader>y', '"+y', { noremap = true, silent = true, desc = 'Yank to clipboard' })
-vim.keymap.set(
-  { 'n', 'v', 'x' },
-  '<leader>Y',
-  '"+yy',
-  { noremap = true, silent = true, desc = 'Yank line to clipboard' }
-)
-vim.keymap.set({ 'n', 'v', 'x' }, '<leader>p', '"+p', { noremap = true, silent = true, desc = 'Paste from clipboard' })
-vim.keymap.set(
-  'i',
-  '<C-p>',
-  '<C-r><C-p>+',
-  { noremap = true, silent = true, desc = 'Paste from clipboard from within insert mode' }
-)
-vim.keymap.set(
+-- Clipboard keymaps
+map({ 'n', 'x' }, '<leader>d', '"_d', { desc = 'Delete without yanking' })
+map({ 'n', 'x' }, '<leader>y', '"+y', { noremap = true, silent = true, desc = 'Yank to clipboard' })
+map({ 'n', 'x' }, '<leader>Y', '"+yy', { noremap = true, silent = true, desc = 'Yank line to clipboard' })
+map(
   'x',
   '<leader>P',
   '"_dP',
@@ -40,9 +37,23 @@ vim.keymap.set(
 )
 
 -- Keymap to toggle diagnostics virtual lines
-vim.keymap.set('n', '<leader>vl', function()
+map('n', '<leader>vl', function()
   local current = vim.diagnostic.config().virtual_lines
   vim.diagnostic.config({
     virtual_lines = not current,
   })
 end, { desc = 'Toggle [V]irtual [L]ines' })
+
+-- Copy Full File-Path
+map('n', '<leader>pa', function()
+  local path = vim.fn.expand('%:p')
+  vim.fn.setreg('+', path)
+  print('file:', path)
+end)
+
+-- Copy Relative File-Path
+map('n', '<leader>pr', function()
+  local path = vim.fn.expand('%:.')
+  vim.fn.setreg('+', path)
+  print('file:', path)
+end)
