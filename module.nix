@@ -216,7 +216,6 @@ inputs:
       vim-sleuth
       snacks-nvim
       nvim-lspconfig
-      nvim-surround
       blink-pairs
       blink-cmp
       blink-compat

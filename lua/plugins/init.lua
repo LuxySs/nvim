@@ -7,7 +7,6 @@ return {
   { import = 'plugins.treesitter' },
   { import = 'plugins.lint' },
   { import = 'plugins.completion' },
-  { import = 'plugins.surround' },
   { import = 'plugins.format' },
   { import = 'plugins.gitsigns' },
   { import = 'plugins.lualine' },
