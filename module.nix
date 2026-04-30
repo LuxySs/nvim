@@ -156,6 +156,14 @@ inputs:
     ];
   };
 
+  config.specs.ocaml = {
+    data = null;
+    extraPackages = with pkgs; [
+      ocamlPackages.ocamlformat
+      ocamlPackages.ocaml-lsp
+    ];
+  };
+
   config.specs.java = {
     lazy = true;
     data = with pkgs.vimPlugins; [

@@ -74,6 +74,11 @@ return {
     lsp = {},
   },
   {
+    'ocamllsp',
+    for_cat = 'ocaml',
+    lsp = {},
+  },
+  {
     'pyright',
     for_cat = 'python',
     lsp = {},

@@ -28,6 +28,7 @@ return {
         javascript = { 'prettierd' },
         typescript = { 'prettierd' },
         java = { 'spotless_maven' },
+        ocaml = { 'ocamlformat' },
       },
 
       format_on_save = function(bufnr)
