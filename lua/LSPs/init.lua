@@ -83,4 +83,9 @@ return {
     for_cat = 'python',
     lsp = {},
   },
+  {
+    'qmlls',
+    for_cat = 'qml',
+    lsp = {},
+  },
 }

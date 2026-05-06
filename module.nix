@@ -164,6 +164,13 @@ inputs:
     ];
   };
 
+  config.specs.qml = {
+    data = null;
+    extraPackages = with pkgs; [
+      kdePackages.qtdeclarative
+    ];
+  };
+
   config.specs.java = {
     lazy = true;
     data = with pkgs.vimPlugins; [
