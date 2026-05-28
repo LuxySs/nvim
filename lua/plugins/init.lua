@@ -26,4 +26,5 @@ return {
   { import = 'plugins.dispatch' },
   { import = 'plugins.comment' },
   { import = 'plugins.sleuth' },
+  { import = 'plugins.icons' },
 }

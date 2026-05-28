@@ -248,7 +248,7 @@ inputs:
       mini-ai
       mini-surround
       vim-tmux-navigator
-      mini-icons
+      nvim-web-devicons
       oil-nvim
 
       nvim-dap
