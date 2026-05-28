@@ -102,7 +102,7 @@ inputs:
 
   config.specs.nix = {
     data = null;
-    extraPackages = with pkgs; [
+    runtimePkgs = with pkgs; [
       nixd
       nixfmt
     ];
@@ -113,7 +113,7 @@ inputs:
     data = with pkgs.vimPlugins; [
       lazydev-nvim
     ];
-    extraPackages = with pkgs; [
+    runtimePkgs = with pkgs; [
       lua-language-server
       stylua
     ];
@@ -121,7 +121,7 @@ inputs:
 
   config.specs.C = {
     data = null;
-    extraPackages = with pkgs; [
+    runtimePkgs = with pkgs; [
       clang-tools
       neocmakelsp
       cmake-format
@@ -131,14 +131,14 @@ inputs:
 
   config.specs.bash = {
     data = null;
-    extraPackages = with pkgs; [
+    runtimePkgs = with pkgs; [
       bash-language-server
     ];
   };
 
   config.specs.python = {
     data = null;
-    extraPackages = with pkgs; [
+    runtimePkgs = with pkgs; [
       pyright
       ruff
     ];
@@ -148,7 +148,7 @@ inputs:
     data = [
       config.nvim-lib.neovimPlugins.rustaceanvim
     ];
-    extraPackages = with pkgs; [
+    runtimePkgs = with pkgs; [
       (config.info.rust.toolchain or inputs.fenix.packages.${stdenv.hostPlatform.system}.latest.toolchain)
       rustup
       llvmPackages.bintools
@@ -158,7 +158,7 @@ inputs:
 
   config.specs.ocaml = {
     data = null;
-    extraPackages = with pkgs; [
+    runtimePkgs = with pkgs; [
       ocamlPackages.ocamlformat
       ocamlPackages.ocaml-lsp
     ];
@@ -166,7 +166,7 @@ inputs:
 
   config.specs.qml = {
     data = null;
-    extraPackages = with pkgs; [
+    runtimePkgs = with pkgs; [
       kdePackages.qtdeclarative
     ];
   };
@@ -176,14 +176,14 @@ inputs:
     data = with pkgs.vimPlugins; [
       nvim-jdtls
     ];
-    extraPackages = with pkgs; [
+    runtimePkgs = with pkgs; [
       jdt-language-server
     ];
   };
 
   config.specs.markdown = {
     data = with pkgs.vimPlugins; [ markview-nvim ];
-    extraPackages = with pkgs; [
+    runtimePkgs = with pkgs; [
       marksman
     ];
   };
@@ -194,7 +194,7 @@ inputs:
       markview-nvim
       typst-preview-nvim
     ];
-    extraPackages = with pkgs; [
+    runtimePkgs = with pkgs; [
       typst
       tinymist
       config.settings.pdfViewer
@@ -205,7 +205,7 @@ inputs:
     data = with pkgs.vimPlugins; [
       vimtex
     ];
-    extraPackages = with pkgs; [
+    runtimePkgs = with pkgs; [
       texlab
       texliveMedium
       config.settings.pdfViewer
@@ -217,7 +217,7 @@ inputs:
     # If we provided any from within either spec, anyway
     after = [ "lze" ];
     # note we didn't have to specify the `lze` specs name, because it was a top level spec
-    extraPackages = with pkgs; [
+    runtimePkgs = with pkgs; [
       tree-sitter
     ];
     # this `lazy = true` definition will transfer to specs in the contained DAL, if there is one.
@@ -299,16 +299,16 @@ inputs:
       # config.runtimeDeps = lib.mkDefault (parentSpec.runtimeDeps or false);
       # config.pluginDeps = lib.mkDefault (parentSpec.pluginDeps or false);
       # or something more interesting like:
-      # add an extraPackages field to the specs themselves
-      options.extraPackages = lib.mkOption {
+      # add an runtimePkgs field to the specs themselves
+      options.runtimePkgs = lib.mkOption {
         type = lib.types.listOf wlib.types.stringable;
         default = [ ];
-        description = "a extraPackages spec field to put packages to suffix to the PATH";
+        description = "a runtimePkgs spec field to put packages to suffix to the PATH";
       };
       # You could do this too
       # config.before = lib.mkDefault [ "INIT_MAIN" ];
     };
-  config.extraPackages = config.specCollect (acc: v: acc ++ (v.extraPackages or [ ])) [ ];
+  config.runtimePkgs = config.specCollect (acc: v: acc ++ (v.runtimePkgs or [ ])) [ ];
 
   # Inform our lua of which top level specs are enabled
   options.settings.cats = lib.mkOption {
