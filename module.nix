@@ -248,6 +248,7 @@ inputs:
       mini-ai
       mini-surround
       vim-tmux-navigator
+      mini-icons
       oil-nvim
 
       nvim-dap
