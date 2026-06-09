@@ -70,7 +70,7 @@ inputs:
 
   options.settings.pdfViewer = lib.mkOption {
     type = lib.types.package;
-    default = pkgs.zathura;
+    default = pkgs.sioyek;
   };
 
   config.info.pdfViewer = baseNameOf (lib.getExe config.settings.pdfViewer);
