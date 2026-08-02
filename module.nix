@@ -126,7 +126,6 @@ inputs:
       neocmakelsp
       cmake-format
       gdb
-      cppman
     ];
   };
 
