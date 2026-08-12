@@ -5,6 +5,9 @@ vim.opt.wrap = false -- Don't wrap lines
 vim.opt.scrolloff = 10 -- Keep 10 lines above/below cursor
 
 -- Indentation
+vim.o.smarttab = true
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
 vim.o.expandtab = true -- Pressing the TAB key will insert spaces instead of a TAB character
 vim.o.breakindent = true -- stops line wrapping from being confusing
 
