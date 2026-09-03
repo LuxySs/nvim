@@ -2,7 +2,6 @@ return {
   { import = 'plugins.colorscheme' },
   { import = 'plugins.snacks' },
   { import = 'plugins.whichkey' },
-  { import = 'plugins.lsp-config' },
   { import = 'plugins.lazydev' },
   { import = 'plugins.treesitter' },
   { import = 'plugins.lint' },

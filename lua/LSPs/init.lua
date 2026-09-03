@@ -1,5 +1,22 @@
 return {
   {
+    'nvim-lspconfig',
+    auto_enable = true,
+    -- NOTE: define a function for lsp,
+    -- and it will run for all specs with type(plugin.lsp) == table
+    -- when their filetype trigger loads them
+    lsp = function(plugin)
+      vim.lsp.config(plugin.name, plugin.lsp or {})
+      vim.lsp.enable(plugin.name)
+    end,
+    -- set up our on_attach function once before the spec loads
+    before = function(_)
+      vim.api.nvim_create_autocmd('LspAttach', {
+        callback = require('LSPs.on_attach'),
+      })
+    end,
+  },
+  {
     'nixd',
     enabled = nixInfo.isNix,
     for_cat = 'nix',
