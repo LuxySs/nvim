@@ -9,11 +9,8 @@ return {
   after = function(plugin)
     local lint = require('lint')
 
-    lint.linters.checkstyle.args = { '-f', 'sarif', '-c', vim.fn.getcwd() .. '/checkstyle.xml' }
-
     lint.linters_by_ft = {
       python = { 'ruff' },
-      java = { 'checkstyle' },
     }
 
     vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
