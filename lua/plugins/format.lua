@@ -18,6 +18,12 @@ return {
     local conform = require('conform')
 
     conform.setup({
+      formatters = {
+        schemat = {
+          command = 'schemat',
+        },
+      },
+
       formatters_by_ft = {
         lua = { 'stylua' },
         nix = { 'nixfmt' },
@@ -29,6 +35,7 @@ return {
         typescript = { 'prettierd' },
         java = { 'spotless_maven' },
         ocaml = { 'ocamlformat' },
+        scheme = { 'schemat' },
       },
 
       format_on_save = function(bufnr)

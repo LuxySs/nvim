@@ -181,6 +181,12 @@ inputs:
     ];
   };
 
+  config.specs.scheme = {
+    lazy = true;
+    data = null;
+    runtimePkgs = with pkgs; [ schemat ];
+  };
+
   config.specs.markdown = {
     data = with pkgs.vimPlugins; [ markview-nvim ];
     runtimePkgs = with pkgs; [
